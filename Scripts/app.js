@@ -32,7 +32,7 @@
 
         let DocumentBody = document.body;
 
-        let Article = DocumentBody.createElement("article");
+        let Article = document.createElement("article");
         let ArticleParagraph =`<p id = "ArticleParagraph" class="mt-3">This is my first article paragraph</p>`;
         Article.setAttribute("class", "container");
         Article.innerHTML = ArticleParagraph;
