@@ -554,25 +554,22 @@
         console.log("Calling DisplayAboutPage...");
     }
 
-    function DisplayContactsPage() {
-        console.log("Calling DisplayContactsPage...");
+    function DisplayContactPage(){
+        console.log("Calling DisplayContactPage....");
 
         let sendButton = document.getElementById("sendButton");
-        let subscribeCheckBox = document.getElementById("subscribeCheckBox");
+        let subscribeCheckbox = document.getElementById("subscribeCheckbox");
 
         sendButton.addEventListener("click", function(){
 
-            if (subscribeCheckBox.checked) {
+            if(subscribeCheckbox.checked){
 
-                AddContact(
-                    document.getElementById("fullName").value,
-                    document.getElementById("contactNumber").value,
-                    document.getElementById("emailAddress").value
-                );
-
+                let contact = new core.Contact(fullName.value, contactNumber.value, emailAddress.value);
+                if(contact.serialize()){
+                    let key = `contact_${Date.now()}`;
+                    localStorage.setItem(key, contact.serialize());
+                }
             }
-            alert("Form successfully submitted!");
-
         });
     }
 
@@ -600,9 +597,9 @@
             case "About":
                 DisplayAboutPage();
                 break;
-            case "Contacts":
+            case "Contact":
                 attachValidationListeners();
-                DisplayContactsPage();
+                DisplayContactPage();
                 break;
             case "Contact List":
                 DisplayContactListPage();
