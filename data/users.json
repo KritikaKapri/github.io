@@ -2,29 +2,26 @@
   "users" :
           [
             {
-              "DisplayName" : "Biblo Baggins",
-              "EmailAddress" : "biblobaggins@durhamcollege.ca",
-              "Username": "bbaggins",
+              "DisplayName" : "Shriya Saran",
+              "EmailAddress" : "shriyasaran37@gmail.com",
+              "Username" : "shriyaS",
               "Password" : "123456"
             },
 
             {
-              "DisplayName" : "Cam Chris",
-              "EmailAddress" : "camchris@durhamcollege.ca",
-              "Username": "ccam",
-              "Password" : "67890"
+              "DisplayName" : "Lionel Messi",
+              "EmailAddress" : "daGoat10@gmail.com",
+              "Username" : "messi10",
+              "Password" : "101010"
             },
+
             {
               "DisplayName" : "admin",
               "EmailAddress" : "admin@durhamcollege.ca",
-              "Username": "admin",
+              "Username" : "admin",
               "Password" : "password"
             }
 
-
           ]
-
-
-
 
 }

@@ -1,12 +1,13 @@
+"use strict";
 
-
-(function(core){
+(function(core) {
 
     class User {
-        constructor(displayName = "", emailAddress = "", userName = "", password = "") {
+
+        constructor(displayName = "", emailAddress = "", username = "", password = "") {
             this._displayName = displayName;
             this._emailAddress = emailAddress;
-            this._userName = userName;
+            this._username = username;
             this._password = password;
         }
 
@@ -18,32 +19,31 @@
             return this._emailAddress;
         }
 
-        get userName() {
-            return this._userName;
+        get username() {
+            return this._username;
         }
 
         set displayName(displayName) {
             this._displayName = displayName;
         }
 
-        setEmailAddress(emailAddress) {
+        set emailAddress(emailAddress) {
             this._emailAddress = emailAddress;
         }
 
-        setUserName(userName) {
-            this._username = userName;
+        set username(username) {
+            this._username = username;
         }
 
-
         toString() {
-            return `Display Name: ${this.displayName}\nEmail Address: ${this.emailAddress}\nUser Name: ${this.userName}`;
+            return `Display Name: ${this._displayName}\nEmail Address: ${this._emailAddress}\nUsername: ${this._username}`;
         }
 
         serialize() {
-            if (this._displayName !== "" && this.emailAddress !== "" && this.userName !== "") {
-                return `${this.displayName}, ${this.userName}, ${this.emailAddress}`;
+            if(this._displayName !== "" && this._emailAddress !== "" && this._username !== "") {
+                return `${this._displayName}, ${this._emailAddress}, ${this._username}`;
             }
-            console.error("[ERROR]Serialization failed! One or more user properties are missing. ");
+            console.error("[ERROR] Serialization failed! One or more user properties are missing!");
             return null;
         }
 
@@ -58,19 +58,18 @@
             return {
                 DisplayName : this._displayName,
                 EmailAddress : this._emailAddress,
-                UserName : this._userName,
-                Password : this._password,
+                Username : this._username,
+                Password : this._password
             }
         }
 
-        fromJSON(json) {
+        fromJSON(data) {
             this._displayName = data.DisplayName;
             this._emailAddress = data.EmailAddress;
-            this._username = data.UserName;
+            this._username = data.Username;
             this._password = data.Password;
         }
 
-
     }
     core.User = User;
-})(core||(core={}));
+})(core || (core = {}));
